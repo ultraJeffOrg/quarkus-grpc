@@ -1,0 +1,8 @@
+site_name: quarkus-grpc
+site_description: A Quarkus gRPC microservice deployed on OpenShift
+
+nav:
+  - Home: index.md
+
+plugins:
+  - techdocs-core

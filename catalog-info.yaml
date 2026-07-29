@@ -1,0 +1,28 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: quarkus-grpc
+  description: A Quarkus gRPC microservice deployed on OpenShift
+  annotations:
+    backstage.io/source-location: url:https://github.com/ultraJeffOrg/quarkus-grpc
+    backstage.io/kubernetes-id: quarkus-grpc
+    backstage.io/kubernetes-namespace: quarkus-grpc
+    backstage.io/techdocs-ref: dir:.
+    janus-idp.io/tekton: quarkus-grpc
+    github.com/project-slug: ultraJeffOrg/quarkus-grpc
+    argocd/app-selector: app.kubernetes.io/instance=quarkus-grpc
+    nexus-repository-manager/docker.image-name: default/quarkus-grpc
+  links:
+    - url: https://devspaces.apps.tallgeese.ultra.lab/#https://github.com/ultraJeffOrg/quarkus-grpc
+      title: Open in Dev Spaces
+      icon: catalog
+      type: ide
+  tags:
+    - quarkus
+    - grpc
+    - java
+    - openshift
+spec:
+  type: service
+  owner: user:default/admin
+  lifecycle: experimental

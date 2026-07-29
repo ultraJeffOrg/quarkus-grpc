@@ -1,0 +1,38 @@
+# quarkus-grpc
+
+A Quarkus gRPC microservice deployed on OpenShift
+
+## Architecture
+
+This is a Quarkus gRPC microservice that exposes the **Greeter** gRPC service.
+
+### Ports
+
+| Port | Protocol | Description |
+|------|----------|-------------|
+| 8080 | HTTP     | Quarkus HTTP server (health checks, metrics) |
+| 9000 | gRPC     | gRPC service endpoint |
+
+## Development
+
+### Prerequisites
+
+- JDK 21+
+- Maven 3.9+
+
+### Running locally
+
+```bash
+mvn quarkus:dev
+```
+
+### Building the container image
+
+```bash
+mvn package -Dquarkus.container-image.build=true
+```
+
+## Deployment
+
+This service is deployed on OpenShift via ArgoCD GitOps. The deployment manifests
+are managed in the [`quarkus-grpc-gitops`](https://github.com/ultraJeffOrg/quarkus-grpc-gitops) repository.
